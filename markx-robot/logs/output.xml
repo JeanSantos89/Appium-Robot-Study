@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-06-10T13:34:15.852488" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-06-10T13:45:01.780880" rpa="false" schemaversion="5">
 <suite id="s1" name="Tasks" source="C:\QAx\projects\markx-robot\tests\tasks.robot">
 <test id="s1-t1" name="Deve criar uma tarefa com sucesso" line="11">
 <kw name="Start session" owner="base" type="SETUP">
@@ -18,112 +18,112 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" start="2025-06-10T13:34:16.008595" elapsed="8.343624"/>
+<status status="PASS" start="2025-06-10T13:45:01.949721" elapsed="6.901713"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="AppiumLibrary">
 <arg>Endereço IP da Api</arg>
 <doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" start="2025-06-10T13:34:24.352410" elapsed="1.039407"/>
+<status status="PASS" start="2025-06-10T13:45:08.851646" elapsed="1.077495"/>
 </kw>
-<status status="PASS" start="2025-06-10T13:34:16.008108" elapsed="9.383817"/>
+<status status="PASS" start="2025-06-10T13:45:01.949193" elapsed="7.980062"/>
 </kw>
 <kw name="Do login" owner="login">
 <kw name="Input Text" owner="AppiumLibrary">
-<msg time="2025-06-10T13:34:25.393132" level="INFO">Typing text '192.168.0.13' into text field 'class=android.widget.EditText'</msg>
+<msg time="2025-06-10T13:45:09.930493" level="INFO">Typing text '192.168.0.13' into text field 'class=android.widget.EditText'</msg>
 <arg>${el1}</arg>
 <arg>${API_key}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<status status="PASS" start="2025-06-10T13:34:25.392434" elapsed="0.633615"/>
+<status status="PASS" start="2025-06-10T13:45:09.929796" elapsed="0.599061"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-06-10T13:34:26.027260" level="INFO">Clicking element 'xpath=//*[@resource-id="signInButton"]'.</msg>
-<msg time="2025-06-10T13:34:26.596120" level="INFO">xpath criteria: //*[@resource-id="signInButton"]</msg>
+<msg time="2025-06-10T13:45:10.530108" level="INFO">Clicking element 'xpath=//*[@resource-id="signInButton"]'.</msg>
+<msg time="2025-06-10T13:45:11.098737" level="INFO">xpath criteria: //*[@resource-id="signInButton"]</msg>
 <arg>xpath=//*[@resource-id="signInButton"]</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-06-10T13:34:26.026220" elapsed="0.569986"/>
+<status status="PASS" start="2025-06-10T13:45:10.529059" elapsed="0.569771"/>
 </kw>
-<status status="PASS" start="2025-06-10T13:34:25.392216" elapsed="1.204071"/>
+<status status="PASS" start="2025-06-10T13:45:09.929566" elapsed="1.169351"/>
 </kw>
 <kw name="Create task" owner="tasks">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-10T13:34:28.597156" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-06-10T13:45:13.099913" level="INFO">Slept 2 seconds.</msg>
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-10T13:34:26.596934" elapsed="2.000330"/>
+<status status="PASS" start="2025-06-10T13:45:11.099432" elapsed="2.000589"/>
 </kw>
 <kw name="Input Text" owner="AppiumLibrary">
-<msg time="2025-06-10T13:34:28.598218" level="INFO">Typing text 'TarefaExemplo' into text field 'xpath=//android.widget.EditText[@resource-id="newTask"]'</msg>
-<msg time="2025-06-10T13:34:29.174447" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="newTask"]</msg>
+<msg time="2025-06-10T13:45:13.100931" level="INFO">Typing text 'TarefaExemplo' into text field 'xpath=//android.widget.EditText[@resource-id="newTask"]'</msg>
+<msg time="2025-06-10T13:45:13.673905" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="newTask"]</msg>
 <arg>${insert_task}</arg>
 <arg>${task_name}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<status status="PASS" start="2025-06-10T13:34:28.597421" elapsed="0.577211"/>
+<status status="PASS" start="2025-06-10T13:45:13.100177" elapsed="0.573829"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-06-10T13:34:29.176111" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@resource-id="createTask"]'.</msg>
-<msg time="2025-06-10T13:34:29.777044" level="INFO">xpath criteria: //android.view.ViewGroup[@resource-id="createTask"]</msg>
+<msg time="2025-06-10T13:45:13.675165" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@resource-id="createTask"]'.</msg>
+<msg time="2025-06-10T13:45:14.299866" level="INFO">xpath criteria: //android.view.ViewGroup[@resource-id="createTask"]</msg>
 <arg>${confirm_create}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-06-10T13:34:29.174881" elapsed="0.602273"/>
+<status status="PASS" start="2025-06-10T13:45:13.674175" elapsed="0.625762"/>
 </kw>
-<status status="PASS" start="2025-06-10T13:34:26.596612" elapsed="3.180642"/>
+<status status="PASS" start="2025-06-10T13:45:11.099221" elapsed="3.200785"/>
 </kw>
 <kw name="Conclusion task" owner="tasks">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-10T13:34:30.778251" level="INFO">Slept 1 second.</msg>
+<msg time="2025-06-10T13:45:15.300818" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-10T13:34:29.777803" elapsed="1.000557"/>
+<status status="PASS" start="2025-06-10T13:45:14.300495" elapsed="1.000421"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-06-10T13:34:30.779308" level="INFO">Clicking element 'xpath=//*[@resource-id="updateTask"]'.</msg>
-<msg time="2025-06-10T13:34:30.894053" level="INFO">xpath criteria: //*[@resource-id="updateTask"]</msg>
+<msg time="2025-06-10T13:45:15.301853" level="INFO">Clicking element 'xpath=//*[@resource-id="updateTask"]'.</msg>
+<msg time="2025-06-10T13:45:17.143143" level="INFO">xpath criteria: //*[@resource-id="updateTask"]</msg>
 <arg>${conclusion_btn}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-06-10T13:34:30.778516" elapsed="0.115632"/>
+<status status="PASS" start="2025-06-10T13:45:15.301059" elapsed="1.842157"/>
 </kw>
-<status status="PASS" start="2025-06-10T13:34:29.777570" elapsed="1.116654"/>
+<status status="PASS" start="2025-06-10T13:45:14.300293" elapsed="2.843037"/>
 </kw>
 <kw name="Delete task" owner="tasks">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-10T13:34:31.895170" level="INFO">Slept 1 second.</msg>
+<msg time="2025-06-10T13:45:18.144411" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-10T13:34:30.894687" elapsed="1.000600"/>
+<status status="PASS" start="2025-06-10T13:45:17.143816" elapsed="1.000700"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-06-10T13:34:31.896284" level="INFO">Clicking element 'xpath=//*[@resource-id="removeTask"]'.</msg>
-<msg time="2025-06-10T13:34:32.709164" level="INFO">xpath criteria: //*[@resource-id="removeTask"]</msg>
+<msg time="2025-06-10T13:45:18.145411" level="INFO">Clicking element 'xpath=//*[@resource-id="removeTask"]'.</msg>
+<msg time="2025-06-10T13:45:18.284934" level="INFO">xpath criteria: //*[@resource-id="removeTask"]</msg>
 <arg>${delete_element}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-06-10T13:34:31.895443" elapsed="0.813806"/>
+<status status="PASS" start="2025-06-10T13:45:18.144657" elapsed="0.140377"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
-<msg time="2025-06-10T13:34:33.637927" level="INFO">xpath criteria: //*[@resource-id="android:id/button2"]</msg>
+<msg time="2025-06-10T13:45:19.266592" level="INFO">xpath criteria: //*[@resource-id="android:id/button2"]</msg>
 <arg>${confirm_delete}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" start="2025-06-10T13:34:32.709405" elapsed="0.928605"/>
+<status status="PASS" start="2025-06-10T13:45:18.285214" elapsed="0.981453"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-06-10T13:34:33.638900" level="INFO">Clicking element 'xpath=//*[@resource-id="android:id/button2"]'.</msg>
-<msg time="2025-06-10T13:34:33.759947" level="INFO">xpath criteria: //*[@resource-id="android:id/button2"]</msg>
+<msg time="2025-06-10T13:45:19.267646" level="INFO">Clicking element 'xpath=//*[@resource-id="android:id/button2"]'.</msg>
+<msg time="2025-06-10T13:45:19.400487" level="INFO">xpath criteria: //*[@resource-id="android:id/button2"]</msg>
 <arg>${confirm_delete}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-06-10T13:34:33.638157" elapsed="0.121885"/>
+<status status="PASS" start="2025-06-10T13:45:19.266814" elapsed="0.133771"/>
 </kw>
-<status status="PASS" start="2025-06-10T13:34:30.894478" elapsed="2.865663"/>
+<status status="PASS" start="2025-06-10T13:45:17.143599" elapsed="2.257077"/>
 </kw>
 <kw name="Finish session" owner="base" type="TEARDOWN">
 <kw name="Close Application" owner="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" start="2025-06-10T13:34:33.760852" elapsed="0.861363"/>
+<status status="PASS" start="2025-06-10T13:45:19.401483" elapsed="0.604956"/>
 </kw>
-<status status="PASS" start="2025-06-10T13:34:33.760594" elapsed="0.861751"/>
+<status status="PASS" start="2025-06-10T13:45:19.401157" elapsed="0.605427"/>
 </kw>
-<status status="PASS" start="2025-06-10T13:34:16.007331" elapsed="18.615210"/>
+<status status="PASS" start="2025-06-10T13:45:01.948490" elapsed="18.058283"/>
 </test>
 <doc>Testes de login</doc>
-<status status="PASS" start="2025-06-10T13:34:15.853558" elapsed="18.769726"/>
+<status status="PASS" start="2025-06-10T13:45:01.782092" elapsed="18.225377"/>
 </suite>
 <statistics>
 <total>
