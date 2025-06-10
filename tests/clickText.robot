@@ -28,8 +28,12 @@ Deve realizar um clique simples
     Wait Until Element Is Visible    ${menu_item_cliquebtn}    5
     Click Element                    ${menu_item_cliquebtn}
 
-    
+    Wait Until Page Contains         Clique simples    5
+    Click Text                       Clique simples
+    Wait Until Page Contains         Botão clique simples
 
+    Click Text                       CLIQUE SIMPLES
+    Wait Until Page Contains         Isso é um clique simples
 
     
 
