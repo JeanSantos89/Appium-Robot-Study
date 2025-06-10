@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-06-10T11:56:57.077877" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\QAx\projects\markx-robot\tests\login.robot">
+<test id="s1-t1" name="Deve logar com sucesso" line="7">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>automationName=uiautomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Emulator</arg>
+<arg>udid=emulator-5554</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>app=${EXECDIR}/apps/markx.apk</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-06-10T11:56:57.237575" elapsed="6.529601"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>Endereço IP da Api</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-06-10T11:57:03.767521" elapsed="0.916904"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-10T11:57:04.684861" level="INFO">${el1} = class=android.widget.EditText</msg>
+<var>${el1}</var>
+<arg>class=android.widget.EditText</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-10T11:57:04.684691" elapsed="0.000197"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-06-10T11:57:04.685679" level="INFO">Typing text '192.168.0.13' into text field 'class=android.widget.EditText'</msg>
+<arg>${el1}</arg>
+<arg>192.168.0.13</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-06-10T11:57:04.685049" elapsed="0.571924"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-06-10T11:57:05.258423" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@resource-id="signInButton"]'.</msg>
+<msg time="2025-06-10T11:57:05.839895" level="INFO">xpath criteria: //android.view.ViewGroup[@resource-id="signInButton"]</msg>
+<arg>xpath=//android.view.ViewGroup[@resource-id="signInButton"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-06-10T11:57:05.257384" elapsed="0.582587"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>Minhas tarefas</arg>
+<arg>5</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-06-10T11:57:05.840297" elapsed="0.840970"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-10T11:57:16.682164" level="INFO">Slept 10 seconds.</msg>
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-10T11:57:06.681506" elapsed="10.000800"/>
+</kw>
+<status status="PASS" start="2025-06-10T11:56:57.236859" elapsed="19.445722"/>
+</test>
+<doc>Testes de login</doc>
+<status status="PASS" start="2025-06-10T11:56:57.079039" elapsed="19.604312"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="1" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
