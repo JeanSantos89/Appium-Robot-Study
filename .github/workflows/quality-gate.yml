@@ -1,0 +1,51 @@
+name: Quality Gate
+
+# Gate estatico dos dois projetos Robot Framework (markx-robot e yodapp-robot1).
+# Nao substitui a execucao real contra um emulador/dispositivo Android com o
+# Appium server de pe: isso exige UI (OS gráfico, Android SDK, emulador KVM)
+# que o GitHub Actions hosted runner nao sustenta de forma estável. Ver README
+# para detalhes da limitação.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  static-checks:
+    name: Lint + dry-run (${{ matrix.project }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [markx-robot, yodapp-robot1]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências Python
+        working-directory: ${{ matrix.project }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install robotframework-robocop
+
+      - name: Lint estático (robocop) — só falha em erro real
+        working-directory: ${{ matrix.project }}
+        run: robocop check --threshold E tests resources
+
+      - name: Dry-run do Robot Framework (valida sintaxe, keywords e resources)
+        working-directory: ${{ matrix.project }}
+        run: robot --dryrun -d dryrun-logs tests/
+
+      - name: Upload dos logs do dry-run
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dryrun-logs-${{ matrix.project }}
+          path: ${{ matrix.project }}/dryrun-logs/

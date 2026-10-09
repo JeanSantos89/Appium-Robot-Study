@@ -86,3 +86,35 @@ Certifique-se de ter instalado:
     ```bash
     robot -d ./logs ./tests/exemploTeste.robot
     ```
+
+---
+
+## Gate de qualidade (CI)
+
+Este repo tem um workflow em `.github/workflows/quality-gate.yml` que roda em
+todo push/PR na `main`, para os dois projetos (`markx-robot` e
+`yodapp-robot1`):
+
+1.  Instala as dependências Python de cada projeto (`requirements.txt`).
+2.  Roda `robocop check --threshold E` (lint estático do Robot Framework) —
+    só quebra o build em erro real, não em estilo.
+3.  Roda `robot --dryrun` sobre a pasta `tests/` — valida que toda keyword
+    usada existe, que os `Resource`/`Library` resolvem e que a sintaxe dos
+    arquivos `.robot` está correta. Não abre app nem toca em UI.
+
+**Limitação real: isto não é um teste de ponta a ponta.** Os testes aqui
+dependem de um emulador Android rodando e de um Appium server de pé
+(`npx appium`), apontando para o APK do app. O runner hospedado do GitHub
+Actions não sustenta isso de forma estável: emulação Android exige
+virtualização (KVM) que nem sempre está disponível/habilitada no runner, o
+boot do emulador é lento e instável, e a sessão do Appium adiciona mais uma
+camada de flakiness. Por isso o gate valida **sintaxe e estrutura**, não
+comportamento do app. Rodar a suíte de verdade continua sendo local, com
+emulador + Appium no ar, seguindo o passo a passo acima.
+
+Quem quiser arriscar um job com emulador real no CI pode usar a action
+[`reactivecircus/android-emulator-runner`](https://github.com/ReactiveCircus/android-emulator-runner)
+— não foi incluída aqui porque, nos testes informais feitos pra montar este
+gate, o boot do emulador no runner padrão é lento e instável demais pra virar
+gate obrigatório sem antes medir a taxa de falso-negativo ao longo de várias
+execuções.
